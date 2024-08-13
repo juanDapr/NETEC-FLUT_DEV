@@ -46,11 +46,13 @@ class LoginScreen extends StatelessWidget {
                 if (state is LoginSuccess) {
                   return const CircularProgressIndicator();
                 }
-                return ElevatedButton(onPressed: () {
-                  context.read<LoginBloc>().add(LoginButtonPressed(username: _usernameController.text, password: _passwordController.text)
-                  );
-                }, child: const Text('Login')
-                );
+                return ElevatedButton(
+                    onPressed: () {
+                      context.read<LoginBloc>().add(LoginButtonPressed(
+                          username: _usernameController.text,
+                          password: _passwordController.text));
+                    },
+                    child: const Text('Login'));
               },
             )
           ],
